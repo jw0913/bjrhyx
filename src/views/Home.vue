@@ -1,22 +1,6 @@
 <template>
     <div>
         <el-row>
-            <el-col :span="8" style="text-align: right">
-                <div style="float: right;vertical-align: middle"><h1>北京仁和永信科技</h1></div>
-                <div style="float: right"><img :src="logo" style="vertical-align:middle" width="94" height="75"/></div>
-            </el-col>
-            <el-col :span="16" style="padding-left: 100px">
-                <el-menu :default-active="activeIndex" mode="horizontal" >
-                    <el-menu-item index="1">首页</el-menu-item>
-                    <el-menu-item index="2">产品中心</el-menu-item>
-                    <el-menu-item index="3">解决方案</el-menu-item>
-                    <el-menu-item index="4">关于我们</el-menu-item>
-                    <el-menu-item index="5">联系我们</el-menu-item>
-                </el-menu>
-            </el-col>
-        </el-row>
-
-        <el-row>
             <el-col :span="24">
                 <el-carousel height="600px" >
                     <el-carousel-item v-for="item in carousel" :key="item">
@@ -38,10 +22,6 @@
                 </div>
             </el-col>
         </el-row>
-
-        <el-row>
-
-        </el-row>
     </div>
 </template>
 
@@ -50,8 +30,6 @@
         name: "Home",
         data() {
             return {
-                activeIndex : "1",
-                logo: require("../assets/logo.png"),
                 carousel : [
                     require("../assets/images/carousel/home1.jpg"),
                     require("../assets/images/carousel/home2.jpg"),
@@ -73,18 +51,6 @@
 </script>
 
 <style scoped>
-    .el-menu.el-menu--horizontal {
-        border-bottom: none;
-    }
-    .el-menu--horizontal > .el-menu-item {
-        height: 70px;
-        line-height: 70px;
-    }
-    .el-menu-item {
-        font-size: 20px;
-    }
-    .el-menu--horizontal > .el-menu-item.is-active {
-        border-bottom: 2px solid #000000;
-    }
+
 
 </style>
