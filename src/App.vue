@@ -29,7 +29,7 @@
               </el-breadcrumb-item>
             </el-breadcrumb>
           </div>
-          <div style="text-align: center;color:#FFF;height: 25px;line-height: 25px "> Copyright © 2004 - 2020 北京仁和永信科技 版权所有</div>
+          <div style="text-align: center;color:#FFF;height: 25px;line-height: 25px "> Copyright © 2004 - 2020 北京仁和永信科技有限公司版权所有</div>
           <div style="text-align: center;color:#FFF;height: 25px;line-height: 25px ">  京公网安备 22000002000088号|京ICP证076359号</div>
         </div>
       </el-footer>

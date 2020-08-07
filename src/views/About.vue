@@ -44,8 +44,8 @@
         name: "About",
         data() {
             return {
-                about0: require("../assets/images/about0.jpg"),
-                about1: require("../assets/images/about1.jpg"),
+                about0: require("../assets/images/about/about0.jpg"),
+                about1: require("../assets/images/about/about1.jpg"),
                 seniority : [
                     require("../assets/images/seniority/1.jpg"),
                     require("../assets/images/seniority/2.jpg"),
