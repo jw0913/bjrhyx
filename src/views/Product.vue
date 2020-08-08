@@ -12,7 +12,7 @@
         <el-row>
             <el-col :span="24">
                 <div class="md1">
-                    <div v-for="item in supplier" :key="item.sid" v-bind:class="{ 'active': item.sid == input.sid}"
+                    <div v-for="item in supplier" :key="item.sid" v-bind:class="{ 'active': item.sid == search.sid}"
                          @click="selectSid(item.sid)">{{item.name}}
                     </div>
                 </div>
@@ -23,12 +23,12 @@
                 <div class="md2">
                     <div class="md2_left">
                         <div v-for="item in category" :key="item.cid"
-                             v-bind:class="{ 'category_active': item.cid == input.cid}" @click="selectCid(item.cid)">
+                             v-bind:class="{ 'category_active': item.cid == search.cid}" @click="selectCid(item.cid)">
                             {{item.name}}
                         </div>
                     </div>
                     <div class="md2_right">
-                        <div class="product" v-for="item in products" :key="item.pid">
+                        <div class="product" v-for="item in search.result" :key="item.pid">
                             <div><img :src="item.icon" class="product-img"></div>
                             <div>{{item.name}}</div>
                         </div>
@@ -45,9 +45,10 @@
         name: "Product",
         data() {
             return {
-                input: {
+                search: {
                     sid: "1",
-                    cid: "1"
+                    cid: "1",
+                    result:[]
                 },
                 carousel: [
                     require("../assets/images/carousel/3000181.jpg"),
@@ -161,11 +162,26 @@
         },
         methods: {
             selectSid(sid) {
-                this.input.sid = sid;
+                this.search.sid = sid;
+                this.searchExe();
             },
             selectCid(cid) {
-                this.input.cid = cid;
+                this.search.cid = cid;
+                this.searchExe();
+            },
+            searchExe(){
+                let result = [];
+               for(let i=0;i<this.products.length;i++){
+                   let item= this.products[i];
+                   if(item.cid == this.search.cid && item.sid == this.search.sid ) {
+                       result.push(item);
+                   }
+               }
+                this.search.result = result;
             }
+        },
+        created() {
+            this.searchExe();
         }
     }
 </script>
